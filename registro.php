@@ -1,5 +1,3 @@
-
-
 <?php
 /* Visualizamos que toda la información está en un Vector para posteriormente 
 introducirla en la tabla usuarios(Base de datos "loginBD")*/
@@ -9,12 +7,12 @@ introducirla en la tabla usuarios(Base de datos "loginBD")*/
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-/* Con esto incluimos la base de datos y accedemos a ella desde
+    /* Con esto incluimos la base de datos y accedemos a ella desde
 el archivo conexionBD.php,que los datos de la Base de Datos*/
 
-include("conexionBD.php");
-// Es como un extends en Java creo.....nos permite acceder a el
-    $success =false;
+    include("conexionBD.php");
+    // Es como un extends en Java creo.....nos permite acceder a el
+    $success = false;
 
     // Vector de errores
 
@@ -127,7 +125,7 @@ include("conexionBD.php");
 
             // Se realiza la ENCRIPTACIÓN DE LA CONTRASEÑA
 
-            $nuevoPassword = password_hash($password,PASSWORD_DEFAULT);
+            $nuevoPassword = password_hash($password, PASSWORD_DEFAULT);
 
 
             /* Ahora empezaré a insertar en la Base de datos, es muy parecido a JAVA,
@@ -155,8 +153,8 @@ include("conexionBD.php");
             Después de registrarse que pueda logearse 
             */
 
-           //  header("Location:login.html");
-           $success =true;
+            //  header("Location:login.html");
+            $success = true;
 
             // Para ver si hubo algún error en la conexión
         } catch (PDOException $e) {
@@ -164,7 +162,7 @@ include("conexionBD.php");
         }
     } else {
         // Al haber errores redirecionamos 
-       
+
         echo "No se han registrado los datos!";
     }
 }
@@ -181,8 +179,7 @@ include("conexionBD.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -196,29 +193,21 @@ include("conexionBD.php");
                 <div class="col-md-8 col-lg-8">
 
 
-                <?php
-                if (isset($success)) { ?>
-                 
-                    <!--Mensaje para informar que se ha registrado exitosamente!-->
-                   
-                    <div
-                        class="alert alert-success alert-dismissible fade show"
-                        role="alert"
-                    >
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="alert"
-                            aria-label="Close"
-                        ></button>
-                    
-                        <strong>!Registro exitoso ¡</strong> Puede proceder a realizar el login.
-                        <a href="login.html" class="btn btn-success">Login</a>
-                    </div>
-                    
-                <?php } ?>
-                   
-                   
+                    <?php
+                    if (isset($success)) { ?>
+
+                        <!--Mensaje para informar que se ha registrado exitosamente!-->
+
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                            <strong>!Registro exitoso ¡</strong> Puede proceder a realizar el login.
+                            <a href="login.html" class="btn btn-success">Login</a>
+                        </div>
+
+                    <?php } ?>
+
+
                     <div class="card">
                         <div class="card-header">Formulario de registro</div>
                         <div class="card-body">
@@ -230,16 +219,14 @@ include("conexionBD.php");
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="" class="form-label">Nombre</label>
-                                            <input type="text" class="form-control" name="nombres" id="nombres"
-                                                aria-describedby="helpId" placeholder="" required />
+                                            <input type="text" class="form-control" name="nombres" id="nombres" aria-describedby="helpId" placeholder="" required />
                                         </div>
 
                                     </div>
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="" class="form-label">Apellidos</label>
-                                            <input type="text" class="form-control" name="apellidos" id="apellidos"
-                                                aria-describedby="helpId" placeholder="" required />
+                                            <input type="text" class="form-control" name="apellidos" id="apellidos" aria-describedby="helpId" placeholder="" required />
                                         </div>
                                     </div>
 
@@ -248,8 +235,7 @@ include("conexionBD.php");
 
                                 <div class="mb-3">
                                     <label for="" class="form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        aria-describedby="emailHelpId" placeholder="abc@mail.com" required />
+                                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="abc@mail.com" required />
                                 </div>
 
 
@@ -257,19 +243,13 @@ include("conexionBD.php");
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="" class="form-label">Contreseña</label>
-                                            <input type="password" class="form-control" name="password" id="password"
-                                                placeholder="" required />
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="" required />
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="" class="form-label">Repetir contraseña</label>
-                                            <input type="password" 
-                                            class="form-control" 
-                                            name="confirmarPassword"
-                                            id="confirmarPassword" 
-                                            placeholder="" 
-                                            required />
+                                            <input type="password" class="form-control" name="confirmarPassword" id="confirmarPassword" placeholder="" required />
                                             <div class="invalid-feedback">Las contraseñas no coinciden</div>
                                         </div>
                                     </div>
@@ -302,22 +282,17 @@ include("conexionBD.php");
         <!-- place footer here -->
     </footer>
     <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
     <!--Vamos a verificar que ambas contraseñas coincidan a través de JavaScript-->
     <script>
-
         // Cuando se vaya a enviar el formulario, se realizará una serie de eventos
 
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function() {
 
-            document.getElementById("formularioDeRegistro").addEventListener('submit', function(event){
+            document.getElementById("formularioDeRegistro").addEventListener('submit', function(event) {
 
                 var contra = document.getElementById("password").value;
                 var confiContra = document.getElementById("confirmarPassword").value;
@@ -334,12 +309,7 @@ include("conexionBD.php");
                 }
             });
         });
-
-
-
-
     </script>
 </body>
 
 </html>
-

@@ -29,39 +29,26 @@ Incluimos boostrap 5 quick snippets, escribiendo bs5-$ -->
                     <div class="card">
                         <div class="card-header">Login</div>
                         <div class="card-body">
-                            
-                    <!--El formulario recolectará datos y lo enviará la login.php para identificar la validación.-->
-                    <form action="login.php" method="post">
 
-                        <div class="mb-3">
-                            <label for="" class="form-label">Correo:</label>
-                            <input
-                                type="email"
-                                class="form-control"
-                                name="email"
-                                id="email"
-                                aria-describedby="helpId"
-                                placeholder=""
-                                required
-                            />
-                        </div>
-                        
+                            <!--El formulario recolectará datos y lo enviará la login.php para identificar la validación.-->
+                            <form action="login.php" method="post">
 
-                        <div class="mb-3">
-                            <label for="" class="form-label">Contraseña:</label>
-                            <input
-                                type="password"
-                                class="form-control"
-                                name="password"
-                                id="password"
-                                placeholder=""
-                                required
-                            />
-                        </div>
-                        
-                        <input type="submit" class="btn btn-primary" value="Iniciar sesión">
-                        <a href="registro.php" class="btn btn-secondary">Registrarse</a>
-                    </form>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Correo:</label>
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        aria-describedby="helpId" placeholder="" required />
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Contraseña:</label>
+                                    <input type="password" class="form-control" name="password" id="password"
+                                        placeholder="" required />
+                                </div>
+
+                                <input type="submit" class="btn btn-primary" value="Iniciar sesión">
+                                <a href="registro.php" class="btn btn-secondary">Registrarse</a>
+                            </form>
 
                         </div>
                         <div class="card-footer text-muted"></div>

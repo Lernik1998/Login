@@ -2,6 +2,8 @@
 Se puede acceder sin estar logeados al index.php y para ello tendremos que emplear
 las variables de sesión y bloquear la ruta.
 Hay que validar que el usuario ha iniciado sesión 
+
+https://www.youtube.com/watch?v=PwCOJnnCS5s
  -->
 
 
@@ -68,28 +70,28 @@ if (!$_SESSION['usuario_id']) {
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col">
-                    
+
                     <h2>Inicio de la aplicación</h2>
 
                     <h3>Bienvenid@ <?php echo $_SESSION['usuario_nombre']; ?></h3>
 
                 </div>
             </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
 
-                        <div class="card">
-                            <div class="card-header">Información</div>
-                            <div class="card-body">
-                                <h4 class="card-title">Detalles</h4>
-                                <img src="php.png" alt="foto" class="card-img-top mx-auto d-block">
-                            </div>
-                            <div class="card-footer text-muted">PHP,JavaScript,BootStrap 5</div>
+                    <div class="card">
+                        <div class="card-header">Información</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Detalles</h4>
+                            <img src="php.png" alt="foto" class="card-img-top mx-auto d-block">
                         </div>
-                        
+                        <div class="card-footer text-muted">PHP,JavaScript,BootStrap 5</div>
                     </div>
+
                 </div>
-                
+            </div>
+
 
         </div>
     </main>
